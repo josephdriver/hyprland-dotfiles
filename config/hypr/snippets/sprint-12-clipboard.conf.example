@@ -5,4 +5,4 @@
 
 exec-once = wl-paste --type text --watch cliphist store
 exec-once = wl-paste --primary --type text --watch cliphist store
-bind = $mainMod, X, exec, $HOME/.local/share/hyrpland-setup/scripts/clipboard-menu.sh
+bind = $mainMod, X, exec, $HOME/.local/share/hyprland-setup/scripts/clipboard-menu.sh

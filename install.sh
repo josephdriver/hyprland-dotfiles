@@ -2,9 +2,9 @@
 set -euo pipefail
 
 script_dir="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
-install_root="${INSTALL_ROOT:-$HOME/.local/share/hyrpland-setup}"
+install_root="${INSTALL_ROOT:-$HOME/.local/share/hyprland-setup}"
 generated_root="$install_root/generated"
-state_root="${XDG_STATE_HOME:-$HOME/.local/state}/hyrpland-setup"
+state_root="${XDG_STATE_HOME:-$HOME/.local/state}/hyprland-setup"
 backup_root="$state_root/backups/$(date +%Y%m%d-%H%M%S)"
 with_sddm=0
 
@@ -113,15 +113,17 @@ reconcile_audio_stack() {
 
 prepare_managed_dir() {
   local dir="$1"
-  local marker="$dir/.hyrpland-setup-managed"
+  local marker="$dir/.hyprland-setup-managed"
+  local legacy_marker="$dir/.hyrpland-setup-managed"
 
-  if [[ -e "$dir" && ! -e "$marker" ]]; then
+  if [[ -e "$dir" && ! -e "$marker" && ! -e "$legacy_marker" ]]; then
     mkdir -p "$backup_root"
     mv "$dir" "$backup_root/$(basename "$dir")"
   fi
 
   mkdir -p "$dir"
   : > "$marker"
+  rm -f "$legacy_marker"
 }
 
 render_template() {

@@ -57,7 +57,7 @@ curl -fsSL <bootstrap-url> | HYPRLAND_SETUP_REPO_URL=<git-url> bash
 - `bootstrap.sh` remote bootstrap entrypoint
 
 ## Notes
-- The installer manages config under `~/.local/share/hyrpland-setup` and links active config from there.
-- Existing managed config directories are backed up under `${XDG_STATE_HOME:-~/.local/state}/hyrpland-setup/backups/`.
+- The installer manages config under `~/.local/share/hyprland-setup` and links active config from there.
+- Existing managed config directories are backed up under `${XDG_STATE_HOME:-~/.local/state}/hyprland-setup/backups/`.
 - SDDM is optional because it changes system-wide login behavior.
 - Legacy sprint-oriented development docs are still present in `docs/` while the public repo cleanup is in progress.

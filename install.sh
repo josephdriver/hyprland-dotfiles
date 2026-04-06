@@ -86,6 +86,22 @@ install_packages() {
   sudo pacman -S --needed --noconfirm "${packages[@]}"
 }
 
+reconcile_audio_stack() {
+  local removal_candidates=()
+  local package
+
+  for package in pulseaudio pulseaudio-bluetooth; do
+    if pacman -Q "$package" >/dev/null 2>&1; then
+      removal_candidates+=("$package")
+    fi
+  done
+
+  if ((${#removal_candidates[@]})); then
+    log 'Removing PulseAudio packages so PipeWire can be installed deterministically.'
+    sudo pacman -Rns --noconfirm "${removal_candidates[@]}"
+  fi
+}
+
 prepare_managed_dir() {
   local dir="$1"
   local marker="$dir/.hyrpland-setup-managed"
@@ -269,6 +285,7 @@ main() {
   generated_root="$install_root/generated"
   mkdir -p "$generated_root" "$state_root"
 
+  reconcile_audio_stack
   install_packages "$install_root/packages/default.txt"
   generate_hypr_configs
   install_user_configs

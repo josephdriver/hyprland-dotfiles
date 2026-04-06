@@ -16,6 +16,7 @@ blueman
 
 pipewire
 pipewire-pulse
+pipewire-jack
 wireplumber
 pavucontrol
 

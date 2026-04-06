@@ -205,7 +205,13 @@ generate_hypr_configs() {
     printf 'monitor = , preferred, auto, 1\n' > "$generated_root/hypr/modules/10-monitors.conf"
   fi
 
-  printf 'preload = %s\nwallpaper = ,%s\nsplash = false\n' "$wallpaper" "$wallpaper" > "$generated_root/hypr/hyprpaper.conf"
+  cat > "$generated_root/hypr/hyprpaper.conf" <<EOF
+wallpaper {
+    monitor = ${monitor_name}
+    path = ${wallpaper}
+    fit_mode = cover
+}
+EOF
 
   prepare_managed_dir "$hypr_dir"
   prepare_managed_dir "$modules_dir"

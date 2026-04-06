@@ -201,11 +201,11 @@ generate_hypr_configs() {
 
   if [[ -n "$monitor_name" ]]; then
     printf 'monitor = %s, preferred, auto, 1\n' "$monitor_name" > "$generated_root/hypr/modules/10-monitors.conf"
-    printf 'preload = %s\nwallpaper = %s,%s\nsplash = false\n' "$wallpaper" "$monitor_name" "$wallpaper" > "$generated_root/hypr/hyprpaper.conf"
   else
     printf 'monitor = , preferred, auto, 1\n' > "$generated_root/hypr/modules/10-monitors.conf"
-    printf 'preload = %s\nwallpaper = ,%s\nsplash = false\n' "$wallpaper" "$wallpaper" > "$generated_root/hypr/hyprpaper.conf"
   fi
+
+  printf 'preload = %s\nwallpaper = ,%s\nsplash = false\n' "$wallpaper" "$wallpaper" > "$generated_root/hypr/hyprpaper.conf"
 
   prepare_managed_dir "$hypr_dir"
   prepare_managed_dir "$modules_dir"

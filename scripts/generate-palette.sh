@@ -5,6 +5,12 @@ config_file="$HOME/.config/matugen/config.toml"
 output_dir="$HOME/.cache/matugen"
 wallpaper_file="$HOME/.config/hypr/hyprpaper.conf"
 
+read_wallpaper_path() {
+  local pattern="$1"
+
+  grep -E "$pattern" "$wallpaper_file" 2>/dev/null | head -n 1 || true
+}
+
 mkdir -p "$output_dir"
 
 if [[ ! -f "$wallpaper_file" ]]; then
@@ -12,14 +18,17 @@ if [[ ! -f "$wallpaper_file" ]]; then
   exit 1
 fi
 
-wallpaper_path="$(grep -E '^\s*path\s*=' "$wallpaper_file" | head -n 1 | cut -d '=' -f 2- | tr -d ' ' )"
+wallpaper_line="$(read_wallpaper_path '^\s*path\s*=')"
+wallpaper_path="$(printf '%s' "$wallpaper_line" | cut -d '=' -f 2- | tr -d ' ' )"
 
 if [[ -z "$wallpaper_path" ]]; then
-  wallpaper_path="$(grep -E '^\s*preload\s*=' "$wallpaper_file" | head -n 1 | cut -d '=' -f 2- | sed 's/^ *//' )"
+  wallpaper_line="$(read_wallpaper_path '^\s*preload\s*=')"
+  wallpaper_path="$(printf '%s' "$wallpaper_line" | cut -d '=' -f 2- | sed 's/^ *//' )"
 fi
 
 if [[ -z "$wallpaper_path" ]]; then
-  wallpaper_path="$(grep -E '^\s*wallpaper\s*=' "$wallpaper_file" | head -n 1 | cut -d '=' -f 2- | cut -d ',' -f 2- | sed 's/^ *//' )"
+  wallpaper_line="$(read_wallpaper_path '^\s*wallpaper\s*=')"
+  wallpaper_path="$(printf '%s' "$wallpaper_line" | cut -d '=' -f 2- | cut -d ',' -f 2- | sed 's/^ *//' )"
 fi
 
 if [[ -z "$wallpaper_path" || ! -f "$wallpaper_path" ]]; then

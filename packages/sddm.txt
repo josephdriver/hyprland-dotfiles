@@ -1,0 +1,4 @@
+# Optional SDDM profile
+
+sddm
+qt6-svg

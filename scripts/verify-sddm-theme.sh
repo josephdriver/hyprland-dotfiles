@@ -1,7 +1,9 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-theme_path="${1:-/home/joe/hyrpland-setup/config/sddm/hyprland-setup}"
+script_dir="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
+repo_root="$(cd -- "$script_dir/.." && pwd)"
+theme_path="${1:-$repo_root/config/sddm/hyprland-setup}"
 log_file="${XDG_CACHE_HOME:-$HOME/.cache}/sddm-theme-test.log"
 
 test -d "$theme_path" || {

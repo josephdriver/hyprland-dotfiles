@@ -19,7 +19,7 @@ print_status 'rofi installed' 'pacman -Q rofi'
 print_status 'power menu script present' 'test -f scripts/power-menu.sh'
 print_status 'power menu script executable' 'test -x scripts/power-menu.sh'
 print_status 'rofi binary available' 'command -v rofi'
-print_status 'SUPER+M binding present' "grep -Fq 'bind = \$mainMod, M, exec, /home/joe/hyrpland-setup/scripts/power-menu.sh' \"$HOME/.config/hypr/hyprland.conf\""
+print_status 'SUPER+M binding present' "grep -Fq 'bind = \$mainMod, M, exec, '$HOME'/.local/share/hyrpland-setup/scripts/power-menu.sh' \"$HOME/.config/hypr/modules/80-keybinds.conf\""
 
 printf '\nManual checks still required:\n'
 printf '1. Press SUPER + M and confirm the power menu opens.\n'

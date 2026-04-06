@@ -24,8 +24,8 @@ print_status 'slurp available' 'command -v slurp'
 print_status 'wf-recorder available' 'command -v wf-recorder'
 print_status 'screenshot script present' 'test -f scripts/take-screenshot.sh'
 print_status 'recording script present' 'test -f scripts/toggle-recording.sh'
-print_status 'screenshot bind present' "grep -Fq 'bind = \$mainMod ALT, S, exec, /home/joe/hyrpland-setup/scripts/take-screenshot.sh' \"$HOME/.config/hypr/modules/80-keybinds.conf\""
-print_status 'recording bind present' "grep -Fq 'bind = \$mainMod ALT, R, exec, /home/joe/hyrpland-setup/scripts/toggle-recording.sh' \"$HOME/.config/hypr/modules/80-keybinds.conf\""
+print_status 'screenshot bind present' "grep -Fq 'bind = \$mainMod ALT, S, exec, '$HOME'/.local/share/hyrpland-setup/scripts/take-screenshot.sh' \"$HOME/.config/hypr/modules/80-keybinds.conf\""
+print_status 'recording bind present' "grep -Fq 'bind = \$mainMod ALT, R, exec, '$HOME'/.local/share/hyrpland-setup/scripts/toggle-recording.sh' \"$HOME/.config/hypr/modules/80-keybinds.conf\""
 
 printf '\nManual checks still required:\n'
 printf '1. Press SUPER+ALT+S and confirm a screenshot is saved.\n'

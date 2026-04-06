@@ -2,7 +2,8 @@
 set -euo pipefail
 
 palette_file="${1:-$HOME/.cache/matugen/colors-dark.json}"
-repo_root="/home/joe/hyrpland-setup"
+script_dir="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
+repo_root="${INSTALL_ROOT:-$(cd -- "$script_dir/.." && pwd)}"
 wallpaper_env="${XDG_CACHE_HOME:-$HOME/.cache}/matugen/source.env"
 
 python - "$palette_file" "$repo_root" "$wallpaper_env" <<'PY'

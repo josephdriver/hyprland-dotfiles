@@ -24,7 +24,7 @@ print_status 'Waybar process running' 'pgrep -x waybar'
 print_status 'audio click action configured' "grep -Fq '\"on-click\": \"pavucontrol\"' \"$HOME/.config/waybar/config.jsonc\""
 print_status 'bluetooth click action configured' "grep -Fq '\"on-click\": \"blueman-manager\"' \"$HOME/.config/waybar/config.jsonc\""
 print_status 'network click action configured' "grep -Fq '\"on-click\": \"nm-connection-editor\"' \"$HOME/.config/waybar/config.jsonc\""
-print_status 'power click action configured' "grep -Fq '\"on-click\": \"/home/joe/hyrpland-setup/scripts/power-menu.sh\"' \"$HOME/.config/waybar/config.jsonc\""
+print_status 'power click action configured' "grep -Fq '\"on-click\": \"'$HOME'/.local/share/hyrpland-setup/scripts/power-menu.sh\"' \"$HOME/.config/waybar/config.jsonc\""
 
 printf '\nManual checks still required:\n'
 printf '1. Confirm the bar renders on screen.\n'

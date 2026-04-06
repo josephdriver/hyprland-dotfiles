@@ -24,7 +24,7 @@ print_status 'clipboard menu script present' 'test -f scripts/clipboard-menu.sh'
 print_status 'clipboard menu script executable' 'test -x scripts/clipboard-menu.sh'
 print_status 'text clipboard watcher configured' "grep -Fq 'wl-paste --type text --watch cliphist store' \"$HOME/.config/hypr/modules/30-autostart.conf\""
 print_status 'primary clipboard watcher configured' "grep -Fq 'wl-paste --primary --type text --watch cliphist store' \"$HOME/.config/hypr/modules/30-autostart.conf\""
-print_status 'clipboard keybind present' "grep -Fq 'bind = \$mainMod, X, exec, /home/joe/hyrpland-setup/scripts/clipboard-menu.sh' \"$HOME/.config/hypr/modules/80-keybinds.conf\""
+print_status 'clipboard keybind present' "grep -Fq 'bind = \$mainMod, X, exec, '$HOME'/.local/share/hyrpland-setup/scripts/clipboard-menu.sh' \"$HOME/.config/hypr/modules/80-keybinds.conf\""
 
 printf '\nManual checks still required:\n'
 printf '1. Copy text and confirm cliphist stores it.\n'

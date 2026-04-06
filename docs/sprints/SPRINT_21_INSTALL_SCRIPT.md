@@ -1,5 +1,9 @@
 # Sprint 21 – Install Script
 
+## Status
+- State: In Progress
+- Last updated: 2026-04-06
+
 ## Goal
 Automate full setup.
 

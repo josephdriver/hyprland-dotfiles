@@ -14,6 +14,14 @@ fi
 
 wallpaper_path="$(grep -E '^\s*path\s*=' "$wallpaper_file" | head -n 1 | cut -d '=' -f 2- | tr -d ' ' )"
 
+if [[ -z "$wallpaper_path" ]]; then
+  wallpaper_path="$(grep -E '^\s*preload\s*=' "$wallpaper_file" | head -n 1 | cut -d '=' -f 2- | sed 's/^ *//' )"
+fi
+
+if [[ -z "$wallpaper_path" ]]; then
+  wallpaper_path="$(grep -E '^\s*wallpaper\s*=' "$wallpaper_file" | head -n 1 | cut -d '=' -f 2- | cut -d ',' -f 2- | sed 's/^ *//' )"
+fi
+
 if [[ -z "$wallpaper_path" || ! -f "$wallpaper_path" ]]; then
   printf 'ERROR: wallpaper path could not be resolved from %s\n' "$wallpaper_file" >&2
   exit 1

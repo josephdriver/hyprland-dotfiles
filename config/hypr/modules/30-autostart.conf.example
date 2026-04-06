@@ -1,4 +1,4 @@
-exec-once = waybar & hyprpaper & firefox
+exec-once = waybar & hyprpaper
 exec-once = hypridle
 exec-once = wl-paste --type text --watch cliphist store
 exec-once = wl-paste --primary --type text --watch cliphist store

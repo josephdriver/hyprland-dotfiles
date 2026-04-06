@@ -66,12 +66,21 @@ verify_distro() {
 }
 
 sync_repo() {
+  local path_name path
+
   if [[ "$script_dir" == "$install_root" ]]; then
     return
   fi
 
   mkdir -p "$install_root"
-  cp -a "$script_dir/." "$install_root/"
+
+  shopt -s dotglob nullglob
+  for path in "$script_dir"/*; do
+    path_name="${path##*/}"
+    [[ "$path_name" == '.git' ]] && continue
+    cp -a "$path" "$install_root/"
+  done
+  shopt -u dotglob nullglob
 }
 
 read_packages() {

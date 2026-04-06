@@ -1,0 +1,12 @@
+[SddmGreeterTheme]
+Name=hyprland-setup
+Description=Simple dark SDDM theme for the Hyprland setup project
+Author=OpenCode
+License=MIT
+Type=sddm-theme
+Version=0.1
+MainScript=Main.qml
+ConfigFile=theme.conf
+Theme-Id=hyprland-setup
+Theme-API=2.0
+QtVersion=6

@@ -1,0 +1,8 @@
+# Sprint 16 package set
+# Install these packages before configuring the Sprint 16 files.
+# This file is intentionally limited to the Sprint 16 scope.
+
+nwg-look
+qt6ct
+kvantum
+papirus-icon-theme

@@ -1,0 +1,8 @@
+# Sprint 12 clipboard snippet
+# Purpose:
+# - start cliphist watchers for regular and primary selections
+# - bind clipboard history to SUPER + X
+
+exec-once = wl-paste --type text --watch cliphist store
+exec-once = wl-paste --primary --type text --watch cliphist store
+bind = $mainMod, X, exec, /home/joe/hyrpland-setup/scripts/clipboard-menu.sh

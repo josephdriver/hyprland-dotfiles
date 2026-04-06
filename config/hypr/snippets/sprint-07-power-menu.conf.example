@@ -1,0 +1,5 @@
+# Sprint 07 power menu snippet
+# Purpose:
+# - bind a simple rofi-based power menu to SUPER + M
+
+bind = $mainMod, M, exec, /home/joe/hyrpland-setup/scripts/power-menu.sh

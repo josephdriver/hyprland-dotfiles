@@ -1,0 +1,6 @@
+# Sprint 02 package set
+# Install these packages before configuring the Sprint 02 files.
+# This file is intentionally limited to the Sprint 02 scope.
+
+networkmanager
+nm-connection-editor

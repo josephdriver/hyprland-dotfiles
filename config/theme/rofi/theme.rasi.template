@@ -1,0 +1,65 @@
+* {
+    background: {{surface}};
+    background-alt: {{surface_container}};
+    foreground: {{on_surface}};
+    selected: {{primary_container}};
+    selected-foreground: {{on_primary_container}};
+    border: {{surface_container}};
+}
+
+window {
+    background-color: @background;
+    text-color: @foreground;
+    border: 2px;
+    border-color: @border;
+    border-radius: 10px;
+}
+
+mainbox {
+    background-color: @background;
+    children: [inputbar, listview];
+    spacing: 8px;
+    padding: 10px;
+}
+
+inputbar,
+message,
+textbox-prompt-colon,
+listview,
+mode-switcher {
+    background-color: @background-alt;
+    text-color: @foreground;
+}
+
+inputbar {
+    background-color: @background-alt;
+    text-color: @foreground;
+    border-radius: 8px;
+    padding: 8px;
+}
+
+prompt,
+entry,
+textbox,
+element-text {
+    background-color: transparent;
+    text-color: @foreground;
+}
+
+listview {
+    background-color: @background-alt;
+    lines: 8;
+    columns: 1;
+}
+
+element {
+    background-color: @background-alt;
+    text-color: @foreground;
+    border-radius: 8px;
+    padding: 8px;
+}
+
+element selected {
+    background-color: @selected;
+    text-color: @selected-foreground;
+}

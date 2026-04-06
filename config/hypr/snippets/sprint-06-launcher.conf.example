@@ -1,0 +1,7 @@
+# Sprint 06 launcher snippet
+# Purpose:
+# - set rofi as the application launcher in drun mode
+# - bind the launcher to SUPER + D
+
+$menu = rofi -show drun
+bind = $mainMod, D, exec, $menu

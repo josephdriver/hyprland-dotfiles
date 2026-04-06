@@ -1,0 +1,6 @@
+# Sprint 05 package set
+# Install these packages before configuring the Sprint 05 files.
+# This file is intentionally limited to the Sprint 05 scope.
+
+mako
+libnotify

@@ -1,0 +1,78 @@
+general {
+    hide_cursor = false
+}
+
+background {
+    monitor =
+    path = {{wallpaper_path}}
+    blur_passes = 3
+    blur_size = 4
+    color = rgba({{overlay_rgba}})
+}
+
+shape {
+    monitor =
+    size = 468, 250
+    position = 0, 18
+    color = rgba({{surface_container_high_rgba}})
+    rounding = 18
+    border_size = 2
+    border_color = rgba({{surface_container_rgba}})
+    halign = center
+    valign = center
+}
+
+label {
+    text = Welcome
+    monitor =
+    position = 0, 110
+    color = rgba({{on_surface_rgba}})
+    font_size = 28
+    font_family = Noto Sans
+    halign = center
+    valign = center
+}
+
+label {
+    text = cmd[update:1000] echo "$(date '+%a %d %b  %H:%M')"
+    monitor =
+    position = 0, 70
+    color = rgba({{outline_rgba}})
+    font_size = 14
+    font_family = Noto Sans
+    halign = center
+    valign = center
+}
+
+input-field {
+    monitor =
+    size = 420, 48
+    position = 0, -10
+    outline_thickness = 2
+    dots_size = 0.18
+    dots_spacing = 0.2
+    dots_center = true
+    outer_color = rgba({{surface_container_rgba}})
+    inner_color = rgba({{background_rgba}})
+    font_color = rgba({{on_surface_rgba}})
+    check_color = rgba({{primary_rgba}})
+    fail_color = rgba({{error_rgba}})
+    hide_input = false
+    fade_on_empty = false
+    rounding = 12
+    font_family = Noto Sans
+    placeholder_text = <span foreground="##{{outline_rgba}}">Password</span>
+    halign = center
+    valign = center
+}
+
+label {
+    text = Press Enter to unlock
+    monitor =
+    position = 0, -58
+    color = rgba({{outline_rgba}})
+    font_size = 13
+    font_family = Noto Sans
+    halign = center
+    valign = center
+}

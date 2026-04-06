@@ -1,0 +1,7 @@
+# Sprint 03 package set
+# Install these packages before configuring the Sprint 03 files.
+# This file is intentionally limited to the Sprint 03 scope.
+
+bluez
+bluez-utils
+blueman

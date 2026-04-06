@@ -1,0 +1,113 @@
+* {
+    font-family: "Noto Sans";
+    font-size: 14px;
+}
+
+#bluetooth,
+#network,
+#custom-powerprofile,
+#custom-power {
+    font-size: 18px;
+    font-family: "Noto Sans Symbols2", "Noto Sans Symbols", "Noto Sans";
+}
+
+#pulseaudio {
+    font-size: 14px;
+    font-family: "Noto Sans";
+}
+
+window#waybar {
+    background: {{surface}};
+    color: {{on_surface}};
+    border-bottom: 1px solid {{surface_container}};
+    padding-top: 2px;
+    padding-bottom: 2px;
+}
+
+#workspaces {
+    margin-left: 10px;
+}
+
+#workspaces button {
+    color: {{outline}};
+    background: transparent;
+    min-width: 24px;
+    min-height: 32px;
+    padding: 0 6px;
+    border-radius: 999px;
+    font-size: 12px;
+}
+
+#workspaces button.active {
+    color: {{primary}};
+    font-size: 27px;
+}
+
+#workspaces button.active label {
+    font-size: 27px;
+}
+
+#window,
+#clock,
+#custom-power {
+    margin: 5px 5px;
+    min-height: 32px;
+    padding: 0 10px;
+    border-radius: 8px;
+    background: {{surface_container}};
+    color: {{on_surface}};
+}
+
+#bluetooth,
+#network,
+#custom-powerprofile {
+    margin: 5px 5px;
+    min-width: 36px;
+    min-height: 36px;
+    padding: 0;
+    border-radius: 8px;
+    background: {{surface_container}};
+    color: {{on_surface}};
+}
+
+#bluetooth label,
+#network label,
+#custom-powerprofile label {
+    min-width: 36px;
+    min-height: 36px;
+    margin: 0;
+    padding: 0;
+}
+
+#custom-powerprofile label {
+    padding-right: 2px;
+}
+
+#pulseaudio {
+    margin: 5px 5px;
+    min-width: 78px;
+    min-height: 32px;
+    padding: 0 8px;
+    border-radius: 8px;
+    background: {{surface_container}};
+    color: {{on_surface}};
+}
+
+#custom-power {
+    min-width: 36px;
+    min-height: 36px;
+    padding: 0;
+    background: {{primary}};
+    color: {{on_primary}};
+}
+
+#custom-power label {
+    min-width: 36px;
+    min-height: 36px;
+    margin: 0;
+    padding: 0;
+}
+
+#custom-power label {
+    padding-top: 4px;
+}

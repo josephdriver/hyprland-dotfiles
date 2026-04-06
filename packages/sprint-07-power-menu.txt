@@ -1,0 +1,4 @@
+# Sprint 07 package set
+# This file is intentionally limited to the Sprint 07 scope.
+
+rofi

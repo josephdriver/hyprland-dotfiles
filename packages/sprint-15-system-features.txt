@@ -1,0 +1,7 @@
+# Sprint 15 package set
+# Install these packages before configuring the Sprint 15 files.
+# This file is intentionally limited to the Sprint 15 scope.
+
+brightnessctl
+hyprsunset
+power-profiles-daemon

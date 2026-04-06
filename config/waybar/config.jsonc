@@ -1,0 +1,61 @@
+{
+  "layer": "top",
+  "position": "top",
+  "modules-left": ["hyprland/workspaces"],
+  "modules-center": ["hyprland/window"],
+  "modules-right": ["pulseaudio", "bluetooth", "network", "custom/powerprofile", "clock", "custom/power"],
+  "hyprland/workspaces": {
+    "all-outputs": true,
+    "format": "{icon}",
+    "format-icons": {
+      "active": "●",
+      "default": "●"
+    }
+  },
+  "hyprland/window": {
+    "separate-outputs": true,
+    "max-length": 80
+  },
+  "pulseaudio": {
+    "format": "<span font_desc='Noto Sans Symbols2 18' rise='-250'>{icon}</span>  <span font_desc='Noto Sans 14'>{volume}%</span>",
+    "format-muted": "<span font_desc='Noto Sans Symbols2 18' rise='-250'>󰝟</span>  <span font_desc='Noto Sans 14'>muted</span>",
+    "format-icons": {
+      "default": ["󰕿", "󰖀", "󰕾"]
+    },
+    "on-click": "pavucontrol"
+  },
+  "bluetooth": {
+    "format": "",
+    "format-disabled": "󰂲",
+    "format-off": "󰂲",
+    "format-connected": "",
+    "tooltip-format": "{controller_alias}\n{status}",
+    "tooltip-format-connected": "{device_alias}",
+    "on-click": "blueman-manager"
+  },
+  "network": {
+    "format-wifi": "",
+    "format-ethernet": "󰈀",
+    "format-linked": "󰈀",
+    "format-disconnected": "󰖪",
+    "tooltip-format-wifi": "{essid} ({signalStrength}%)",
+    "tooltip-format-ethernet": "{ifname}",
+    "tooltip-format-disconnected": "Disconnected",
+    "on-click": "nm-connection-editor"
+  },
+  "custom/powerprofile": {
+    "exec": "/home/joe/hyrpland-setup/scripts/current-power-profile.sh",
+    "return-type": "json",
+    "interval": 5,
+    "signal": 8,
+    "on-click": "/home/joe/hyrpland-setup/scripts/toggle-power-profile.sh"
+  },
+  "clock": {
+    "format": "<span font_desc='Noto Sans 14'>{:%d/%m/%y %H:%M}</span>"
+  },
+  "custom/power": {
+    "format": "⏻",
+    "tooltip": false,
+    "on-click": "/home/joe/hyrpland-setup/scripts/power-menu.sh"
+  }
+}

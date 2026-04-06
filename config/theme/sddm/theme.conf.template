@@ -1,0 +1,13 @@
+[General]
+background=background.jpg
+defaultBackground=background.jpg
+backgroundColor={{background}}
+overlayColor=#{{overlay_argb}}
+panelColor=#{{panel_argb}}
+fieldColor=#{{field_argb}}
+textColor={{on_surface}}
+mutedTextColor={{outline}}
+accentColor={{primary}}
+accentTextColor={{on_primary}}
+borderColor={{surface_container}}
+font=Noto Sans

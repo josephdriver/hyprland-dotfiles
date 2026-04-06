@@ -1,0 +1,13 @@
+# Modular Hyprland config root
+
+source = ~/.config/hypr/modules/10-monitors.conf
+source = ~/.config/hypr/modules/20-programs.conf
+source = ~/.config/hypr/modules/30-autostart.conf
+source = ~/.config/hypr/modules/40-environment.conf
+source = ~/.config/hypr/modules/50-permissions.conf
+source = ~/.config/hypr/modules/60-look-and-feel.conf
+source = ~/.config/hypr/modules/70-input.conf
+source = ~/.config/hypr/modules/80-keybinds.conf
+source = ~/.config/hypr/modules/90-window-rules.conf
+source = ~/.config/hypr/sprint-01-core.conf
+source = ~/.config/hypr/sprint-05-notifications.conf

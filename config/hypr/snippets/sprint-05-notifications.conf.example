@@ -1,0 +1,8 @@
+# Sprint 05 notifications snippet
+# Purpose:
+# - start mako in a standard Hyprland session
+#
+# How to use:
+# - Merge this line into your active Hyprland autostart config if mako is not already started.
+
+exec-once = mako

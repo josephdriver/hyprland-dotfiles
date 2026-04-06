@@ -1,0 +1,13 @@
+# Sprint 01 core infrastructure snippet
+# Purpose:
+# - start polkit agent
+# - ensure portal-related environment is available in a normal Hyprland session
+#
+# How to use:
+# - If your Hyprland config already has an autostart file, merge these lines there.
+# - Do not duplicate them if your CachyOS preset already starts the same services.
+
+exec-once = /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+exec-once = dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=Hyprland
+exec-once = systemctl --user restart xdg-desktop-portal.service
+exec-once = systemctl --user restart xdg-desktop-portal-hyprland.service

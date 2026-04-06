@@ -52,3 +52,5 @@ papirus-icon-theme
 noto-fonts
 noto-fonts-emoji
 noto-fonts-extra
+ttf-font-awesome
+ttf-nerd-fonts-symbols-mono
